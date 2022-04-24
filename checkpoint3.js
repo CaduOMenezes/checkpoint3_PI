@@ -57,9 +57,9 @@ const curso = {
 
     resultado: function (pessoa) {
 
-        if (this.pessoa.calcularMedia() >= curso.notaAprovacao && pessoa.qtdFaltas < curso.numeroFaltas) {
+        if (pessoa.calcularMedia() >= curso.notaAprovacao && pessoa.qtdFaltas < curso.numeroFaltas) {
             console.log(`${pessoa.nome} foi aprovado`)
-        } else if (this.pessoa.calcularMedia() >= 1.1*curso.notaAprovacao && pessoa.qtdFaltas == curso.numeroFaltas) {
+        } else if (pessoa.calcularMedia() >= 1.1*curso.notaAprovacao && pessoa.qtdFaltas == curso.numeroFaltas) {
             console.log(`${pessoa.nome} foi aprovado`)
         } else {
             console.log(`${pessoa.nome}  foi Reprovado`)
@@ -71,11 +71,13 @@ const curso = {
 
     //passo 6
 
-     resultadofinal: function(){
-         let aprovacao =[];
-       for (let i = 0; i < curso.listaAlunos.length; i++) {
-           const status = this.resultado(i);
-           this.aprovacao.push(status);
+     resultadofinal: function(pessoas){
+
+       for (let i = 0; i < pessoas.length; i++) {
+
+           console.log(this.resultado(i));
+
+
        }
 
     }
