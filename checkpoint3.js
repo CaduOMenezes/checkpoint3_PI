@@ -57,15 +57,17 @@ const curso = {
 
     resultado: function (pessoa) {
 
-        if (pessoa.calcularMedia() >= curso.notaAprovacao && pessoa.qtdFaltas < curso.numeroFaltas) {
-            console.log(`${pessoa.nome} foi aprovado`)
-        } else if (pessoa.calcularMedia() >= 1.1*curso.notaAprovacao && pessoa.qtdFaltas == curso.numeroFaltas) {
-            console.log(`${pessoa.nome} foi aprovado`)
-        } else {
-            console.log(`${pessoa.nome}  foi Reprovado`)
-        }
+            if (pessoa.calcularMedia() >= curso.notaAprovacao && pessoa.qtdFaltas < curso.numeroFaltas) {
+                console.log(`${pessoa.nome} foi Aprovado`)
 
-    },
+            } else if (pessoa.calcularMedia() >= 1.1*curso.notaAprovacao && pessoa.qtdFaltas == curso.numeroFaltas) {
+                console.log(`${pessoa.nome} foi Aprovado`)
+                
+            } else {
+                console.log(`${pessoa.nome}  foi Reprovado`)
+            }
+
+        },
 
     //fim do passo 5
 
@@ -75,7 +77,7 @@ const curso = {
 
        for (let i = 0; i < pessoas.length; i++) {
 
-           console.log(this.resultado(i));
+           console.log(curso.resultado(i));
 
 
        }
