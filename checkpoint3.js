@@ -42,6 +42,7 @@ const curso = {
     notaAprovacao: 7,
     numeroFaltas: 4,
     listaAlunos: pessoas,
+    arrBoleanos: lista=[], //lista do topico 6.
 
     //fim do passo 3
 
@@ -73,22 +74,29 @@ const curso = {
 
     //passo 6
 
-     resultadofinal: function(){
-       for (let i = 0; i < this.listaAlunos.length; i++) {
+    resultadoFinal: function(){
+        for (let i = 0; i < this.listaAlunos.length; i++) {
 
-           console.log(curso.resultado());
+            this.listaAlunos[i]
 
-
-       }
-
-    }
-
-    //fim do passo 6
+         if (this.listaAlunos[i].calcularMedia() >= curso.notaAprovacao && this.listaAlunos[i].qtdFaltas < curso.numeroFaltas) {
+             this.arrBoleanos.push(true)
+ 
+         } else if (this.listaAlunos[i].calcularMedia() >= 1.1*curso.notaAprovacao && this.listaAlunos[i].qtdFaltas == curso.numeroFaltas) {
+             this.arrBoleanos.push(true)
+ 
+         } else {
+             this.arrBoleanos.push(false)
+         }
+        }
+ 
+     }
+ 
+     //fim do passo 6
 
 }
 
-curso.resultadofinal()
 
-
-
-
+//Executando o passo 6
+curso.resultadoFinal()
+console.log(curso.arrBoleanos);
