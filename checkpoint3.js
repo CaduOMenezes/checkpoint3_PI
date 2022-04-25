@@ -25,23 +25,23 @@ function Pessoa(nome, notas, qtdFaltas) {
 
 let pessoas = [];
 
-const pessoa1 = new Pessoa("Kevilyn", [10, 7, 8], 1);
+const pessoa1 = new Pessoa("Kevilyn", [10, 7, 0], 1);
 const pessoa2 = new Pessoa("Tamires", [10, 8, 7], 3);
 const pessoa3 = new Pessoa("Cadu", [8, 6, 9], 5);
 const pessoa4 = new Pessoa("Jonathas", [9, 7, 8], 2);
 const pessoa5 = new Pessoa("Ricardo Tani", [10, 8, 8], 3);
-const pessoa6 = new Pessoa("Tiago Souza", [7, 9, 8], 0);
+const pessoa6 = new Pessoa("Tiago Souza", [7, 9, 0], 0);
 
 
 pessoas.push(pessoa1, pessoa2, pessoa3, pessoa4, pessoa5, pessoa6)
 
 //passo 3
-
 const curso = {
     nomeCurso: "CTD",
     notaAprovacao: 7,
     numeroFaltas: 4,
     listaAlunos: pessoas,
+    arrBoleanos: lista=[], //lista do topico 6.
 
     //fim do passo 3
 
@@ -58,13 +58,13 @@ const curso = {
     resultado: function (pessoa) {
     
             if (pessoa.calcularMedia() >= curso.notaAprovacao && pessoa.qtdFaltas < curso.numeroFaltas) {
-                console.log(`${pessoa.nome} foi Aprovado`)
+               return `${pessoa.nome} foi Aprovado`
 
             } else if (pessoa.calcularMedia() >= 1.1*curso.notaAprovacao && pessoa.qtdFaltas == curso.numeroFaltas) {
-                console.log(`${pessoa.nome} foi Aprovado`)
+               return `${pessoa.nome} foi Aprovado`
 
             } else {
-                console.log(`${pessoa.nome}  foi Reprovado`)
+               return `${pessoa.nome}  foi Reprovado`
             }
 
         },
@@ -73,12 +73,18 @@ const curso = {
 
     //passo 6
 
-     resultadofinal: function(){
+     resultadoFinal: function(){
        for (let i = 0; i < this.listaAlunos.length; i++) {
+        this.listaAlunos[i]
+        if (this.listaAlunos[i].calcularMedia() >= curso.notaAprovacao && this.listaAlunos[i].qtdFaltas < curso.numeroFaltas) {
+            this.arrBoleanos.push(true)
 
-           console.log(curso.resultado());
+        } else if (this.listaAlunos[i].calcularMedia() >= 1.1*curso.notaAprovacao && this.listaAlunos[i].qtdFaltas == curso.numeroFaltas) {
+            this.arrBoleanos.push(true)
 
-
+        } else {
+            this.arrBoleanos.push(false)
+        }
        }
 
     }
@@ -86,9 +92,4 @@ const curso = {
     //fim do passo 6
 
 }
-
-curso.resultadofinal()
-
-
-
-
+console.log(curso.resultado(pessoa1));
