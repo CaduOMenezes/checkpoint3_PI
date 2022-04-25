@@ -1,3 +1,13 @@
+//3º Checkpoint de Programação Imperativa - April 2022
+
+//Grupo:
+//Kevilyn
+//Tamires
+//Cadu Menezes
+//Jonathas
+//Ricardo Tani
+//Tiago Souza
+
 
 //passo 1
 function Pessoa(nome, notas, qtdFaltas) {
