@@ -108,5 +108,26 @@ const curso = {
 
 
 //Executando o passo 6
+
+
+console.log("Execução do passo 1")
+console.log(pessoa1);
+console.log("___________________________________")
+console.log("Execução do passo 2")
+pessoa1.faltas();
+console.log(pessoa1);
+console.log("___________________________________")
+console.log("Execução do passo 3")
+console.log(curso)
+console.log("___________________________________")
+console.log("Execução do passo 4")
+console.log("Adicionando o aludo testando")
+curso.adicionarEstudante("Testando Ocurso", [7, 5, 9], 3)
+console.log(curso.listaAlunos)
+console.log("___________________________________")
+console.log("Execução do passo 5")
+curso.resultado(pessoa1)
+console.log("___________________________________")
+console.log("Execução do passo 6")
 curso.resultadoFinal()
 console.log(curso.arrBoleanos);
